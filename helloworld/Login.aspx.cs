@@ -33,12 +33,14 @@ namespace helloworld
                 Session["user_id"] = dr["id"].ToString();
                 Session["user_name"] = dr["username"].ToString();
                 Application.Lock();
-                switch (user_type.SelectedIndex)
-                {
-                    case 0: Application["admin_count"] = Convert.ToInt32(Application["admin_count"]) + 1; break;
-                    case 1: Application["teacher_count"] = Convert.ToInt32(Application["teacher_count"]) + 1; break;
-                    case 2: Application["student_count"] = Convert.ToInt32(Application["student_count"]) + 1; break;
-                }
+                //switch (user_type.SelectedIndex)
+                //{
+                //    case 0: Application["admin_count"] = Convert.ToInt32(Application["admin_count"]) + 1; break;
+                //    case 1: Application["teacher_count"] = Convert.ToInt32(Application["teacher_count"]) + 1; break;
+                //    case 2: Application["student_count"] = Convert.ToInt32(Application["student_count"]) + 1; break;
+                //}
+               Application["user_list"] += "," + username.Text;
+                Application["all_count"] = Convert.ToInt32(Application["all_count"]) + 1;
                 Application.UnLock();
                 Response.Write("<script>alert('登陆成功');location.href='/';</script>");
             }

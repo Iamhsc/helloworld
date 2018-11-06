@@ -9,7 +9,7 @@ namespace helloworld
 {
     public class MysqlOperate
     {
-        public static string strconn = "Charset=utf8;server=112.74.32.136;user id='imhsc';password='imhsc';database=students";
+        public static string strconn = "Charset=utf8;server=112.74.32.136;user id='imhsc';password='imhsc';database=helloworld";
         public static MySqlCommand cmd;
         public static MySqlDataReader dr;
         /// <summary>
